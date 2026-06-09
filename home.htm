@@ -24,7 +24,7 @@ function tick(){
   x = Number(cishi.style.left.replace("px", ""))
 
   if (x < 0) velocity = 1
-  if (x > window.innerWidth) velocity = -1
+  if (x > window.innerWidth-200) velocity = -1
 
   cishi.style.left = x + velocity + "px"
 }
