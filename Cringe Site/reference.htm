@@ -1,0 +1,60 @@
+<html onmousemove="if (wedragging == true) {
+  baka.style.top = event.y - 24 + 'px';
+  baka.style.left = event.x - 24 + 'px';
+  document.cookie = 'x = ' + (event.x - 24);
+  document.cookie = 'y = ' + (event.y -24);
+}
+">
+<link rel=stylesheet href=sushisite.css>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<img id=baka src=Idle.gif style="position: absolute; z-index:99" onmousedown="wedragging = true; return false" onmouseup="wedragging = false" onload="
+array=document.cookie.split('; ');
+for(i=0; i<array.length; i++){
+  if (array[i].startsWith('x=')){
+    baka.style.left = array[i].replace('x=','') + 'px'
+  }
+  if (array[i].startsWith('y=')){
+    baka.style.top = array[i].replace('y=','') + 'px'
+  }
+}">
+
+<a href=home.htm class=topbuttons>HOME</a>
+<a href=about.htm class=topbuttons>ABOUT</a>
+<a href=reference.htm class=topbuttons>REFERENCE</a>
+<a href=contact.htm class=topbuttons>CONTACT</a>
+<hr>
+<main>
+<img id=KumaBunny src="Sushi by KumaBunny.png">
+<img id=underconstruction src=pikachu.gif>
+<p> COMING SOON!!! For now, enjoy some shin regis!! :D</p>
+<iframe width="360" height="639" src="https://www.youtube.com/embed/bje_hB6mFr8" title="Banana Wort!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p> WORT WORT WORT!!! </p>
+<iframe width="360" height="639" src="https://www.youtube.com/embed/MqYX3i-3GUU" title="Never estimate Master Chief." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p> COMBAT EVOLVED!!!! </p>
+</main>
+<hr>
+
+<img id=baka2 src=Walk.gif>
+<script>
+  baka2.style.position = "fixed";
+  baka2.style.bottom = "0px";
+  x = 0;
+  step = 1;
+
+  function walk() {
+    baka2.style.left = x + "px";
+    x += step;
+
+    if (x > innerWidth - 48) {
+      step = -1;
+      baka2.style.transform = "scaleX(-1)"
+    }
+
+    else if (x < 0) {
+      step = 1;
+      baka2.style.transform = "scaleX(1)"
+    }
+  }
+
+  setInterval(walk, 10)
+</script>

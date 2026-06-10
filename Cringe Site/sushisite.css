@@ -1,0 +1,92 @@
+@keyframes sussybaka {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@font-face {
+  font-family: "JP Font";
+  src: url("Px437_DOS_V_re_JPN16.ttf")
+}
+
+/*@font-face {
+  font-family: "JP Font";
+  src: url("Px437_DOS_V_re_JPN16.ttf");
+  font-weight: bold
+}*/
+
+body {
+  background: url("wave.bmp");
+  font-family: "JP Font";
+  text-align: center;
+  color: #0A2200;
+
+
+}
+
+main {
+  animation:sussybaka 3s;
+
+}
+
+a {
+  color: #FF782E;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0A2200;
+}
+
+hr {
+  border-top: 1px solid silver;
+  padding: 1px;
+  border-bottom : 1px solid silver;
+  border-left: none;
+  border-right: none;
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+#me {
+  clip-path: circle(120px)
+}
+
+#KumaBunny {
+  height: 400px;
+}
+
+.bottomicons {
+  height: 64px;
+}
+
+.bottomicons:hover {
+  filter:hue-rotate(90deg);
+}
+
+.topbuttons {
+  display:inline-block;
+  margin-top:30px;
+  margin-right:35px;
+  border:1px solid #FF782E;
+
+  width: 10em;
+  padding:2px;
+  border-radius:10px;
+  letter-spacing: 3px;
+  color: #FF782E;
+}
+
+.topbuttons:hover {
+  color:#0A2200;
+  border:1px solid #0A2200;
+}
+
+#cishi{
+  position:absolute;
+  bottom:1px;
+  left:1px;
+}

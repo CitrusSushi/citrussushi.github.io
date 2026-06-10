@@ -1,0 +1,3 @@
+<html onmousemove="if (wedragging == true) {baka.style.top = event.y - 24 + 'px'; baka.style.left = event.x - 24 + 'px'}">
+<img id=baka src=idle.gif style="position: absolute" onmousedown="wedragging = true; return false" onmouseup="wedragging = false">
+<!-- "return false" in onmousedown is to disable default drag behavior. Delete "return false" and see what happens when you drag li'l C. -->
