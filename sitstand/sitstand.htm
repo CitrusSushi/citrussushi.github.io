@@ -1,0 +1,16 @@
+<img id=baka src=sit.bmp onclick=sitstand()>
+<script>
+  state = "sit";
+
+  function sitstand() {
+    if (state == "sit") {
+      state = "stand";
+      baka.src = "stand.bmp"
+    }
+
+    else if (state == "stand") {
+      state = "sit";
+      baka.src = "sit.bmp"
+    }
+  }
+</script>

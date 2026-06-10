@@ -1,0 +1,21 @@
+<img id=baka src=walk.gif>
+<script>
+  baka.style.position = "absolute";
+  baka.style.bottom = "0px";
+  x = 0;
+  step = 1;
+
+  function walk() {
+    baka.style.left = x + "px";
+    x += step;
+
+    if (x > innerWidth - 48) {
+      step = -1;
+      baka.style.transform = "scaleX(-1)"
+    }
+
+    else if (x < 0) {step = 1; baka.style.transform = "scaleX(-1) scaleY(1)"}
+  }
+
+  setInterval(walk, 10)
+</script>

@@ -1,3 +1,12 @@
+@keyframes sussybaka {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
 @font-face {
   font-family: "JP Font";
   src: url("Px437_DOS_V_re_JPN16.ttf")
@@ -15,8 +24,13 @@ body {
   text-align: center;
   color: #0A2200;
 
+
 }
 
+main {
+  animation:sussybaka 3s;
+
+}
 
 a {
   color: #FF782E;

@@ -1,11 +1,29 @@
+<html onmousemove="if (wedragging == true) {
+  baka.style.top = event.y - 24 + 'px';
+  baka.style.left = event.x - 24 + 'px';
+  document.cookie = 'x = ' + (event.x - 24);
+  document.cookie = 'y = ' + (event.y -24);
+}
+">
 <link rel=stylesheet href=sushisite.css>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<img id=baka src=Idle.gif style="position: absolute; z-index:99" onmousedown="wedragging = true; return false" onmouseup="wedragging = false" onload="
+array=document.cookie.split('; ');
+for(i=0; i<array.length; i++){
+  if (array[i].startsWith('x=')){
+    baka.style.left = array[i].replace('x=','') + 'px'
+  }
+  if (array[i].startsWith('y=')){
+    baka.style.top = array[i].replace('y=','') + 'px'
+  }
+}">
 
 <a href=home.htm class=topbuttons>HOME</a>
 <a href=about.htm class=topbuttons>ABOUT</a>
 <a href=reference.htm class=topbuttons>REFERENCE</a>
 <a href=contact.htm class=topbuttons>CONTACT</a>
 <hr>
+<main>
 <img id=me src=me.bmp>
 <h1> Citrus Sushi </h1>
 <h2> Contact </h2>
@@ -13,9 +31,35 @@
 <p>You can send me an email: <a href="mailto:citrussushi@gmail.com">citrussushi@gmail.com</a>,
 <p>DM me <a href="https://twitter.com/CitrusSushi">@CitrusSushi</a> on Twitter, or DM my Discord: <a href="https://discord.gg/NeYyMGVHrh">citrussushi</a> ヽ(•̀ω•́ )ゝ✧</p>
 <p>Please be civil when DMing me, I appreciate it! 🙇</p>
+</main>
 <hr>
 <a href=https://twitter.com/CitrusSushi><img id=Twitter class=bottomicons src=twitter.bmp></a>
 <a href=https://twitch.tv/citrussushi><img id=Twitch class=bottomicons src=twitch.bmp></a>
 <a href=https://www.youtube.com/channel/UCjUZnTrwXJerqA7JewzRW9w?app=desktop><img id=Youtube class=bottomicons src=youtube.bmp></a>
 <a href=https://discord.gg/NeYyMGVHrh><img id=Discord class=bottomicons src=discord.bmp></a>
 <a href=mailto:citrussushi@gmail.com><img id=Email class=bottomicons src=email.bmp></a>
+
+<img id=baka2 src=Walk.gif>
+<script>
+  baka2.style.position = "fixed";
+  baka2.style.bottom = "0px";
+  x = 0;
+  step = 1;
+
+  function walk() {
+    baka2.style.left = x + "px";
+    x += step;
+
+    if (x > innerWidth - 48) {
+      step = -1;
+      baka2.style.transform = "scaleX(-1)"
+    }
+
+    else if (x < 0) {
+      step = 1;
+      baka2.style.transform = "scaleX(1)"
+    }
+  }
+
+  setInterval(walk, 10)
+</script>
